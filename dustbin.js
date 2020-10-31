@@ -12,6 +12,7 @@ class dustbin{
         this.rightWallBody = Bodies.rectangle(this.x + this.dustbinWidth/2,this.y - this.dustbinHeight/2,this.wallThickness,this.dustbinHeight,{isStatic: true })
         Matter.Body.setAngle(this.rightWallBody,this.angle)
 
+        this.image = loadImage("sprites/dustbingreen.png")
         World.add(world,this.bottomBody)
         World.add(world,this.leftWallBody)
         World.add(world,this.rightWallBody)
@@ -27,9 +28,7 @@ class dustbin{
         translate(posLeft.x,posLeft.y)
         angleMode(RADIANS)
         rotate(this.angle)
-        this.image = loadImage("sprites/dustbingreen.png")
         imageMode(CENTER)
-        image(this.image,0,-this,dustbinwidth/2,this.dustbinwidth, this.dustbinheight)
         pop();
 
         push();
@@ -37,17 +36,14 @@ class dustbin{
         angleMode(RADIANS)
         rotate(-1*this.angle)
         rectMode(CENTER)
-        this.image = loadImage("sprites/dustbingreen.png")
         imageMode(CENTER)
-        image(this.image,0,-this,dustbinwidth/2,this.dustbinwidth, this.dustbinheight)
         pop();
 
         push();
         translate(posBottom.x,posBottom.y)
         angleMode(RADIANS)
-        this.image = loadImage("sprites/dustbingreen.png")
         imageMode(CENTER)
-        image(this.image,0,-this,dustbinwidth/2,this.dustbinwidth, this.dustbinheight)
+        image(this.image,0,-this.dustbinHeight/2,this.dustbinWidth,this.dustbinHeight)
         pop();
     }
 }

@@ -3,11 +3,11 @@ class paper{
         var options = {
             isStatic:false,
             restitution : 0.3,
-            friction: 0.5,
+            friction: 0,
             density:1.2
 
         }
-        this.body = Bodies.circle(x,y,radius,options)
+        this.body = Bodies.circle(x,y,(radius-20)/2,options)
         this.x = x
         this.y = y
         this.radius = radius
@@ -21,7 +21,7 @@ class paper{
         push();
         translate(pos.x,pos.y)
         imageMode (CENTER)
-        image(this.image,0,0,this.radius)
+        image(this.image,0,0,this.radius,this.radius)
         pop();
 
     }
